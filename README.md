@@ -49,9 +49,10 @@ You can edit owner and other in `'./setting.json'`
 
 ```ts
 {
- "ownername":"ktdprjct",
- "ownernumber":"62895342581896",
- "Apikey":"_"
+"OwnerNumber": "62895342581896",
+"OwnerName": "KTDPRJCT",
+"BotName": "KTDPRJCT メ Bo† ༆",
+"Apikey": "isi apikey u"
 }
 ```
 
