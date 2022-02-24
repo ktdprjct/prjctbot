@@ -32,12 +32,16 @@
 # Instalasi
 ## Termux
 ```bash
-> apt update && apt upgrade
-> pkg install libweb nodejs git ffmpeg imagemagick
-> git clone https://github.com/ktdprjct/prjctbot.git
-> cd ktdprjctbot
-> npm install
-> node .
+apt update && apt upgrade
+apt install git -y
+apt install nodejs -y
+apt install ffmpeg -y
+apt install libwebp -y
+apt install imagemagick -y
+git clone https://github.com/ktdprjct/prjctbot
+cd ktdprjctbot
+npm install
+npm start
 ```
 
 ## settings
