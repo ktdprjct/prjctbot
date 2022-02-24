@@ -53,7 +53,7 @@ exports.help =  (Ktdprjct, mek, botname, pushname, isOwner, isPrem, isUser, isBa
 │ ${prefix}request <fitur apa>
 │ ${prefix}tourl <tag foto/video>
 ╰───
-╭─「 Sricker  Menu 」
+╭─「 Sticker  Menu 」
 │ ${prefix}smeme <teks>
 │ ${prefix}sticker <reply foto>
 │ ${prefix}tovideo <reply sticker>
