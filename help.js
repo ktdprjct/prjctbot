@@ -34,7 +34,7 @@ exports.help =  (Ktdprjct, mek, botname, pushname, isOwner, isPrem, isUser, isBa
 ╭─「 ${botname} 」
 │ Hai, ${pushname}
 │
-│ Nama : ${pushname}*
+│ Nama : ${pushname}
 │ Owner : ${isOwner? "Owner👑️": "User⚔️"}
 │ Premium : ${isPrem? "Aktif  ✓": "Tidak ✘"}
 │ Register : ${isUser? `Done`: `Belum Daftar`}
@@ -127,6 +127,13 @@ exports.help =  (Ktdprjct, mek, botname, pushname, isOwner, isPrem, isUser, isBa
 │ ${prefix}waifu
 │ ${prefix}chara 
 │ ${prefix}megumin
+╰───
+╭─「 18+ Menu 」 only chat
+│ ${prefix}milf
+│ ${prefix}xtrap
+│ ${prefix}xneko
+│ ${prefix}xwaifu
+│ ${prefix}xblowjob
 ╰───
 ╭─「 Audio Menu 」
 │ ${prefix}fat
