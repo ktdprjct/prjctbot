@@ -208,7 +208,7 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
     var Verived = "${owner}@s.whatsapp.net"
     var txt = mek.message.conversation
     var botNumber = Ktdprjct.user.jid
-    var ownerNumber = [`${owner}@s.whatsapp.net`,"6285161212950@s.whatsapp.net"]
+    var ownerNumber = [`${owner}@s.whatsapp.net`]
     var isGroup = from.endsWith('@g.us')
     let sender = isGroup ? mek.participant: mek.key.remoteJid
     let senderr = mek.key.fromMe ? Ktdprjct.user.jid: mek.key.remoteJid.endsWith('@g.us') ? mek.participant: mek.key.remoteJid
@@ -639,11 +639,10 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
             "productMessage": {
               "product": {
                 "productImage": imgCatalog,
-                "productId": "4457725420906655",
+                "productId": "99999",
                 "title": `_*MENU ${botname}*_`,
                 "description": help.help(Ktdprjct, mek, botname, pushname, isOwner, isPrem, isUser, isBan, prefix),
                 "productImageCount": 1,
-                "firstImageId": 1,
                 "salePriceAmount1000": "1000",
                 "retailerId": `${tanggal}`,
                 "url": "Thank You All"
@@ -698,8 +697,9 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
         case 'asupan':{
           if (isBan) return sticBan(from)
           if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
           const asupan = JSON.parse(fs.readFileSync('./database/bot/asupan.json'))
-          Ktdprjct.sendFile(from, pickRandom(asupan), 'asupan.mp4', '', mek)
+          Ktdprjct.sendFile(from, pickRandom(asupan), 'asupan.mp4', 'Ini Asupannya kak..', mek)
         }
         break
 
@@ -799,13 +799,7 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
         case 'stickerwm': case 'gifstiker': case 's': case 'stickergif': case 'sticker': case 'stiker': case 'swm':
         case 'takestick': {
             if (isBan) return sticBan(from)
-            if (!isUser) return sendButMessage(from, mess.noregis, `Created By KTDPRJCT メ Bo†`, [{
-              buttonId: `${prefix}ktdprjctreg`, buttonText: {
-                displayText: `Daftar`,
-              }, type: 1,
-            }], {
-              quoted: ftrol
-            });
+            if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
             let packname1 = q.split('|')[0] ? q.split('|')[0]: `KTDPRJCT Bot`
             let author1 = q.split('|')[1] ? q.split('|')[1]: '62895342581896'
             if (isMedia && !mek.message.videoMessage || isQuotedImage) {
@@ -1311,7 +1305,7 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
           if (isAfkOn) return
           reason = q ? q: 'Nothing'
           off.addAfkUser(sender, Date.now(), reason, _off)
-          papa = `*${pushname}* Sekarang sedang Afk\n*Reason :* ${reason}\n`
+          papa = `*${pushname}* Sekarang sedang Afk`
           Ktdprjct.sendMessage(from, papa, text, {
             quoted: mek
           })
@@ -1743,7 +1737,7 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
           let lolie = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/loli.json`)).data
           let lolies = lolie[Math.floor(Math.random() * (lolie.length))]
           let loliess = await getBuffer(lolies)
-          Ktdprjct.sendFile(from,loliess, '', 'Ini lolinya kak...', mek)
+          Ktdprjct.sendFile(from, loliess, '', 'Ini lolinya kak...', mek)
         }
           break
           
@@ -1793,6 +1787,82 @@ module.exports = Ktdprjct = async (Ktdprjct, chatUpdate, mek) => {
           let json = await res.json()
           if (!json.url) throw 'Error!'
           Ktdprjct.sendFile(from, json.url, '', `@Ktdprjct\nLink : ${json.url}`, mek)
+        }
+          break
+        
+        case 'cosplay':{
+          if (isBan) return sticBan(from)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
+          let lolie = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/cosplay.json`)).data
+          let lolies = lolie[Math.floor(Math.random() * (lolie.length))]
+          let loliess = await getBuffer(lolies)
+          Ktdprjct.sendFile(from, loliess, '', '@Ktdprjct', mek)
+        }
+          break
+        
+        //18+
+        case 'milf':{
+          if (isBan) return sticBan(from)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          if (isGroup) return reply(`Dichat pribadi aja klo buat dosa jangan ajak ajak`)
+          sticWait(from)
+          let milf = (await axios.get(`https://raw.githubusercontent.com/Arya-was/endak-tau/main/milf.json`)).data
+          let milfs = milf[Math.floor(Math.random() * (milf.length))]
+          let milfss = await getBuffer(milfs)
+          Ktdprjct.sendFile(from, milfss, '', 'Milfnya kak...', mek)
+        }
+          break
+          
+        case 'xneko':{
+          if (isBan) return sticBan(from)
+          if (isGroup) return reply(`Dichat pribadi aja klo buat dosa jangan ajak ajak`)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
+          let res = await fetch('https://api.waifu.pics/nsfw/neko')
+          if (!res.ok) throw await res.text()
+          let json = await res.json()
+          if (!json.url) throw 'Error!'
+          Ktdprjct.sendFile(from, json.url, '', `@Ktdprjct\nLink : ${json.url}`, mek)
+        }
+          break
+          
+        case 'xwaifu':{
+          if (isBan) return sticBan(from)
+          if (isGroup) return reply(`Dichat pribadi aja klo buat dosa jangan ajak ajak`)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
+          let res = await fetch('https://api.waifu.pics/nsfw/waifu')
+          if (!res.ok) throw await res.text()
+          let json = await res.json()
+          if (!json.url) throw 'Error!'
+          Ktdprjct.sendFile(from, json.url, '', `@Ktdprjct\nLink : ${json.url}`, mek)
+        }
+          break
+          
+        case 'xtrap':{
+          if (isBan) return sticBan(from)
+          if (isGroup) return reply(`Dichat pribadi aja klo buat dosa jangan ajak ajak`)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
+          let res = await fetch('https://api.waifu.pics/nsfw/trap')
+          if (!res.ok) throw await res.text()
+          let json = await res.json()
+          if (!json.url) throw 'Error!'
+          Ktdprjct.sendFile(from, json.url, '', `@Ktdprjct\nLink : ${json.url}`, mek)
+        }
+          break
+          
+        case 'xblowjob':{
+          if (isBan) return sticBan(from)
+          if (isGroup) return reply(`Dichat pribadi aja klo buat dosa jangan ajak ajak`)
+          if (!isUser) return Ktdprjct.sendButton(from, daftar1, daftar2, 'DAFTAR', `${prefix}ktdprjctreg`, mek)
+          sticWait(from)
+          let res = await fetch('https://api.waifu.pics/nsfw/blowjob')
+          if (!res.ok) throw await res.text()
+          let json = await res.json()
+          if (!json.url) throw 'Error!'
+          Ktdprjct.sendFile(from, json.url, '', `@Ktdprjct\nLink : ${json.url}`,mek)
         }
           break
           
